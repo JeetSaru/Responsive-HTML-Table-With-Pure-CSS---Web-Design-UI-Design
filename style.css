@@ -64,7 +64,7 @@ main.table {
 
 .table__header .input-group:hover {
     width: 45%;
-    background-color: #fff9;
+    background-color: #fff8;
     box-shadow: 0 .1rem .4rem #0002;
 }
 
@@ -140,8 +140,37 @@ tbody tr:nth-child(even) {
     background-color: #0000000b;
 }
 
+tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
 tbody tr:hover {
     background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+    padding: 0;
+    font: 0 / 0 sans-serif;
+    transition: .2s ease-in-out .5s;
+}
+
+tbody tr.hide td img {
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out .5s;
 }
 
 .status {
@@ -197,6 +226,19 @@ thead th:hover {
     color: #6c00bd;
 }
 
+thead th.active span.icon-arrow{
+    background-color: #6c00bd;
+    color: #fff;
+}
+
+thead th.asc span.icon-arrow{
+    transform: rotate(180deg);
+}
+
+thead th.active,tbody td.active {
+    color: #6c00bd;
+}
+
 .export__file {
     position: relative;
 }
@@ -248,8 +290,8 @@ thead th:hover {
     display: block;
     width: 100%;
     padding: .6rem 0;
-    background-color: #fff;
-
+    background-color: #f2f2f2;
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -264,7 +306,7 @@ thead th:hover {
 
 .export__file .export__file-options label:hover{
     transform: scale(1.05);
-    background-color: #f2f2f2;
+    background-color: #fff;
     cursor: pointer;
 }
 
