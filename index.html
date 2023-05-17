@@ -15,14 +15,27 @@ Code written by:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Responsive HTML Table With Pure CSS - Web Design/UI Design</title>
+    <title>Usuarios</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
 </head>
 
 <body>
+
+    <header>
+      <div class="nombre-trabajo">
+        <h2>Introduccion al formateo CSS</h2>
+      </div>
+    </header>
+
     <main class="table">
         <section class="table__header">
-            <h1>Customer's Orders</h1>
+            <h1 id="ttable">Usuarios</h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 <img src="images/search.png" alt="">
@@ -44,11 +57,10 @@ Code written by:
                 <thead>
                     <tr>
                         <th> Id <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Customer <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Location <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Order Date <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Status <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Amount <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> DNI <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Email <span class="icon-arrow">&UpArrow;</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,9 +70,8 @@ Code written by:
                         <td> Seoul </td>
                         <td> 17 Dec, 2022 </td>
                         <td>
-                            <p class="status delivered">Delivered</p>
+                            alberto@gmail.com
                         </td>
-                        <td> <strong> $128.90 </strong></td>
                     </tr>
                     <tr>
                         <td> 2 </td>
@@ -68,9 +79,8 @@ Code written by:
                         <td> Kathmandu </td>
                         <td> 27 Aug, 2023 </td>
                         <td>
-                            <p class="status cancelled">Cancelled</p>
+                            alberto@gmail.com
                         </td>
-                        <td> <strong>$5350.50</strong> </td>
                     </tr>
                     <tr>
                         <td> 3</td>
@@ -78,9 +88,8 @@ Code written by:
                         <td> Tokyo </td>
                         <td> 14 Mar, 2023 </td>
                         <td>
-                            <p class="status shipped">Shipped</p>
+                            alberto@gmail.com
                         </td>
-                        <td> <strong>$210.40</strong> </td>
                     </tr>
                     <tr>
                         <td> 4</td>
@@ -88,9 +97,8 @@ Code written by:
                         <td> New Delhi </td>
                         <td> 25 May, 2023 </td>
                         <td>
-                            <p class="status delivered">Delivered</p>
+                            alberto@gmail.com
                         </td>
-                        <td> <strong>$149.70</strong> </td>
                     </tr>
                     <tr>
                         <td> 5</td>
@@ -98,9 +106,8 @@ Code written by:
                         <td> Paris </td>
                         <td> 23 Apr, 2023 </td>
                         <td>
-                            <p class="status pending">Pending</p>
+                            alberto@gmail.com
                         </td>
-                        <td> <strong>$399.99</strong> </td>
                     </tr>
                     <tr>
                         <td> 6</td>
@@ -108,9 +115,8 @@ Code written by:
                         <td> London </td>
                         <td> 23 Apr, 2023 </td>
                         <td>
-                            <p class="status cancelled">Cancelled</p>
+                            alberto@gmail.com
                         </td>
-                        <td> <strong>$399.99</strong> </td>
                     </tr>
                     <tr>
                         <td> 7</td>
@@ -118,9 +124,8 @@ Code written by:
                         <td> New York </td>
                         <td> 20 May, 2023 </td>
                         <td>
-                            <p class="status delivered">Delivered</p>
+                            alberto@gmail.com
                         </td>
-                        <td> <strong>$399.99</strong> </td>
                     </tr>
                     <tr>
                         <td> 8</td>
@@ -128,9 +133,8 @@ Code written by:
                         <td> Islamabad </td>
                         <td> 30 Feb, 2023 </td>
                         <td>
-                            <p class="status pending">Pending</p>
+                            alberto@gmail.com
                         </td>
-                        <td> <strong>$149.70</strong> </td>
                     </tr>
                     <tr>
                         <td> 9</td>
@@ -138,14 +142,65 @@ Code written by:
                         <td> Dhaka </td>
                         <td> 22 Dec, 2023 </td>
                         <td>
-                            <p class="status cancelled">Cancelled</p>
+                            alberto@gmail.com
                         </td>
-                        <td> <strong>$249.99</strong> </td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
+    <script>
+      const tabla = document.querySelector("#cuerpo");
+      const opciones = {
+        method: "POST",
+      };
+
+      fetch("consulta.php", opciones)
+        .then((respuesta) => respuesta.json())
+        .then((resultado) => {
+          resultado.forEach((elemento) => {
+            console.log(resultado);
+            tabla.innerHTML += `
+
+
+                    <tr>
+                        <td> ${elemento.id} </td>
+                        <td> <img src="${elemento.archivo}" alt="">${elemento.nombre_completo}</td>
+                        <td> ${elemento.dni} </td>
+                        <td> ${elemento.edad} </td>
+                        <td>
+                            ${elemento.email}
+                        </td>
+                    </tr>
+
+
+          <tr>
+            <td>${elemento.id}</td>
+            <td>${elemento.nombre_completo}</td>
+            <td>${elemento.dni}</td>
+            <td>${elemento.edad}</td>
+            <td>${elemento.email}</td>
+            <td>
+              <img src="${elemento.archivo}" class="img-berp" width="70" />
+            </td>
+          </tr>
+            `;
+          });
+        });
+
+      
+      var input = document.getElementById("dni");
+      input.addEventListener("input", function () {
+        if (this.value.length > 8) this.value = this.value.slice(0, 8);
+      });
+
+
+      var input = document.getElementById("edad");
+      input.addEventListener("input", function () {
+        if (this.value.length > 3) this.value = this.value.slice(0, 3);
+        if (this.value >= 120) this.value = 120;
+      });
+    </script>
 </body>
 
 </html>
