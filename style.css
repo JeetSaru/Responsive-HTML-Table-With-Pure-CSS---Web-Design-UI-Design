@@ -7,14 +7,14 @@
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
     background: url(images/28669-abstractos.jpg) center / cover;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
 }
 
 header {
-    position: absolute;
     display: flex;
     height: 70px;
     width: 100%;
@@ -33,10 +33,9 @@ header {
 }
 
 main.table {
-    margin-top: 90px;
-    margin-bottom: 40px;
     width: 82vw;
-    height: 90vh;
+    margin: 0 auto;
+    margin-bottom: 20px;
     background-color: #fff5;
 
     backdrop-filter: blur(7px);
