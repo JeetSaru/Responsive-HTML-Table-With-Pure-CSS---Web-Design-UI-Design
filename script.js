@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     let edit = false;
     fetchTasks ();
 
