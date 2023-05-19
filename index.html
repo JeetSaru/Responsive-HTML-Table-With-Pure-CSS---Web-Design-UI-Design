@@ -12,99 +12,100 @@ Code written by:
 <html lang="en" title="Coding design">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Usuarios</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Usuarios</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
 
-    <header>
-      <div class="nombre-trabajo">
-        <h2 class="animate__animated animate__pulse">Introduccion al formateo CSS</h2>
-      </div>
-    </header>
-      <div class="login-box">
-        <form>
-          <div class="user-box">
-            <input type="text" name="" required>
-            <label>Nombre Completo</label>
-          </div>
-          <div class="user-box">
-            <input type="number" name="" required>
-            <label>DNI</label>
-          </div>
-          <div class="user-box">
-            <input type="number" name="" required>
-            <label>Edad</label>
-          </div>
-          <div class="user-box">
-            <input type="text" name="" required>
-            <label>Email</label>
-          </div>
-          <div class="user-box">
-            <input type="file" name="" required>
-          </div><center>
+  <header>
+    <div class="nombre-trabajo">
+      <h2 class="animate__animated animate__pulse">Introduccion al formateo CSS</h2>
+    </div>
+  </header>
+
+  <div class="div-modal">
+    <div class="login-box animate__animated animate__fadeInDown animate__faster">
+      <div class="close-modal-button">x</div>
+      <form>
+        <div class="user-box">
+          <input type="text" name="" required>
+          <label>Nombre Completo</label>
+        </div>
+        <div class="user-box">
+          <input type="number" name="" required>
+          <label>DNI</label>
+        </div>
+        <div class="user-box">
+          <input type="number" name="" required>
+          <label>Edad</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="" required>
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input type="file" name="" required>
+        </div>
+        <center>
           <a href="#" type="submit" id="ocultar-modal">
-                 SEND
-             <span></span>
-          </a></center>
-        </form>
+            SEND
+            <span></span>
+          </a>
+        </center>
+      </form>
+    </div>
+  </div>
+
+
+  <main class="table">
+    <section class="table__header">
+      <h1 id="ttable">Usuarios</h1>
+      <div class="input-group">
+        <input type="search" placeholder="Search Data...">
+        <img src="images/search.png" alt="">
       </div>
+      <div class="agregar">
+        <label for="agregar" class="agregar-btn" title="Agregar Usuarios"></label>
+        <input type="checkbox" id="agregar">
+      </div>
+    </section>
+    <section class="table__body">
+      <table>
+        <thead>
+          <tr class="head">
+            <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+            <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
+            <th> DNI <span class="icon-arrow">&UpArrow;</span></th>
+            <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
+            <th> Email <span class="icon-arrow">&UpArrow;</span></th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo">
 
-    <main class="table">
-        <section class="table__header">
-            <h1 id="ttable">Usuarios</h1>
-            <div class="input-group">
-                <input type="search" placeholder="Search Data...">
-                <img src="images/search.png" alt="">
-            </div>
-            <div class="agregar">
-                <label for="agregar" class="agregar-btn" title="Agregar Usuarios"></label>
-                <input type="checkbox" id="agregar">
-            </div>
-        </section>
-        <section class="table__body">
-            <table>
-                <thead>
-                    <tr class="head">
-                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> DNI <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Edad <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Email <span class="icon-arrow">&UpArrow;</span></th>
-                    </tr>
-                </thead>
-                <tbody id="cuerpo">
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script>
+    const tabla = document.querySelector("#cuerpo");
+    const opciones = {
+      method: "POST",
+    };
 
-                </tbody>
-            </table>
-        </section>
-    </main>
-    <script>
-      const tabla = document.querySelector("#cuerpo");
-      const opciones = {
-        method: "POST",
-      };
-
-      fetch("consulta.php", opciones)
-        .then((respuesta) => respuesta.json())
-        .then((resultado) => {
-          resultado.forEach((elemento) => {
-            tabla.innerHTML += `
+    fetch("consulta.php", opciones)
+      .then((respuesta) => respuesta.json())
+      .then((resultado) => {
+        resultado.forEach((elemento) => {
+          tabla.innerHTML += `
                     <tr>
                         <td> ${elemento.id} </td>
                         <td> <img src="${elemento.archivo}" alt="">${elemento.nombre_completo}</td>
@@ -115,22 +116,22 @@ Code written by:
                         </td>
                     </tr>
             `;
-          });
         });
-
-      
-      var input = document.getElementById("dni");
-      input.addEventListener("input", function () {
-        if (this.value.length > 8) this.value = this.value.slice(0, 8);
       });
 
 
-      var input = document.getElementById("edad");
-      input.addEventListener("input", function () {
-        if (this.value.length > 3) this.value = this.value.slice(0, 3);
-        if (this.value >= 120) this.value = 120;
-      });
-    </script>
+    var input = document.getElementById("dni");
+    input.addEventListener("input", function () {
+      if (this.value.length > 8) this.value = this.value.slice(0, 8);
+    });
+
+
+    var input = document.getElementById("edad");
+    input.addEventListener("input", function () {
+      if (this.value.length > 3) this.value = this.value.slice(0, 3);
+      if (this.value >= 120) this.value = 120;
+    });
+  </script>
 </body>
 
 </html>
