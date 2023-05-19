@@ -23,13 +23,17 @@ Code written by:
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 </head>
 
 <body>
 
     <header>
       <div class="nombre-trabajo">
-        <h2>Introduccion al formateo CSS</h2>
+        <h2 class="animate__animated animate__pulse">Introduccion al formateo CSS</h2>
       </div>
     </header>
 
@@ -40,22 +44,22 @@ Code written by:
                 <input type="search" placeholder="Search Data...">
                 <img src="images/search.png" alt="">
             </div>
-            <div class="export__file">
-                <label for="export-file" class="export__file-btn" title="Export File"></label>
-                <input type="checkbox" id="export-file">
-                <div class="export__file-options">
-                    <label>Export As &nbsp; &#10140;</label>
-                    <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
-                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
-                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
-                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+            <div class="agregar">
+                <label for="agregar" class="agregar-btn" title="Agregar Usuarios"></label>
+                <input type="checkbox" id="agregar">
+                <div class="agregar-options">
+                    <label>Agregar As &nbsp; &#10140;</label>
+                    <label for="agregar" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                    <label for="agregar" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="agregar" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="agregar" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
                 </div>
             </div>
         </section>
         <section class="table__body">
             <table>
                 <thead>
-                    <tr>
+                    <tr class="head">
                         <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
                         <th> DNI <span class="icon-arrow">&UpArrow;</span></th>
@@ -63,88 +67,8 @@ Code written by:
                         <th> Email <span class="icon-arrow">&UpArrow;</span></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td> 1 </td>
-                        <td> <img src="images/Zinzu Chan Lee.jpg" alt="">Zinzu Chan Lee</td>
-                        <td> Seoul </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td>
-                            alberto@gmail.com
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td><img src="images/Jeet Saru.jpg" alt=""> Jeet Saru </td>
-                        <td> Kathmandu </td>
-                        <td> 27 Aug, 2023 </td>
-                        <td>
-                            alberto@gmail.com
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td><img src="images/Sonal Gharti.jpg" alt=""> Sonal Gharti </td>
-                        <td> Tokyo </td>
-                        <td> 14 Mar, 2023 </td>
-                        <td>
-                            alberto@gmail.com
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 4</td>
-                        <td><img src="images/Alson GC.jpg" alt=""> Alson GC </td>
-                        <td> New Delhi </td>
-                        <td> 25 May, 2023 </td>
-                        <td>
-                            alberto@gmail.com
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 5</td>
-                        <td><img src="images/Sarita Limbu.jpg" alt=""> Sarita Limbu </td>
-                        <td> Paris </td>
-                        <td> 23 Apr, 2023 </td>
-                        <td>
-                            alberto@gmail.com
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 6</td>
-                        <td><img src="images/Alex Gonley.jpg" alt=""> Alex Gonley </td>
-                        <td> London </td>
-                        <td> 23 Apr, 2023 </td>
-                        <td>
-                            alberto@gmail.com
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 7</td>
-                        <td><img src="images/Alson GC.jpg" alt=""> Jeet Saru </td>
-                        <td> New York </td>
-                        <td> 20 May, 2023 </td>
-                        <td>
-                            alberto@gmail.com
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 8</td>
-                        <td><img src="images/Sarita Limbu.jpg" alt=""> Aayat Ali Khan </td>
-                        <td> Islamabad </td>
-                        <td> 30 Feb, 2023 </td>
-                        <td>
-                            alberto@gmail.com
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 9</td>
-                        <td><img src="images/Alex Gonley.jpg" alt=""> Alson GC </td>
-                        <td> Dhaka </td>
-                        <td> 22 Dec, 2023 </td>
-                        <td>
-                            alberto@gmail.com
-                        </td>
-                    </tr>
+                <tbody id="cuerpo">
+
                 </tbody>
             </table>
         </section>
@@ -159,10 +83,7 @@ Code written by:
         .then((respuesta) => respuesta.json())
         .then((resultado) => {
           resultado.forEach((elemento) => {
-            console.log(resultado);
             tabla.innerHTML += `
-
-
                     <tr>
                         <td> ${elemento.id} </td>
                         <td> <img src="${elemento.archivo}" alt="">${elemento.nombre_completo}</td>
@@ -172,18 +93,6 @@ Code written by:
                             ${elemento.email}
                         </td>
                     </tr>
-
-
-          <tr>
-            <td>${elemento.id}</td>
-            <td>${elemento.nombre_completo}</td>
-            <td>${elemento.dni}</td>
-            <td>${elemento.edad}</td>
-            <td>${elemento.email}</td>
-            <td>
-              <img src="${elemento.archivo}" class="img-berp" width="70" />
-            </td>
-          </tr>
             `;
           });
         });

@@ -8,7 +8,8 @@
 
 body {
     height: 100vh;
-    background: url(images/28669-abstractos.jpg) center / cover;
+    background-color: #ae0000;
+    background-image: linear-gradient(0deg, #ae0000 0%, #ff5e5e 100%);    
     display: grid;
     grid-template-rows: auto 1fr;
     gap: 20px;
@@ -21,15 +22,22 @@ header {
     background-color: black;
     align-items: center;
     justify-content: space-between;
-    font-size: 15px;
+}
+
+h2{
+    font-size: 22px;
     font-weight: lighter;
-    letter-spacing: 3;
+    letter-spacing: 2px;
 }
 
 .nombre-trabajo {
     justify-content: center;
     margin: 0 auto;
     color: white;
+}
+
+main{
+    max-height: 790px;
 }
 
 main.table {
@@ -58,7 +66,7 @@ main.table {
 
 .table__header .input-group {
     width: 35%;
-    height: 100%;
+    min-height: 100%;
     background-color: #fff5;
     padding: 0 .8rem;
     border-radius: 2rem;
@@ -185,31 +193,6 @@ tbody tr.hide td img {
     transition: .2s ease-in-out .5s;
 }
 
-.status {
-    padding: .4rem 0;
-    border-radius: 2rem;
-    text-align: center;
-}
-
-.status.delivered {
-    background-color: #86e49d;
-    color: #006b21;
-}
-
-.status.cancelled {
-    background-color: #d893a3;
-    color: #b30021;
-}
-
-.status.pending {
-    background-color: #ebc474;
-}
-
-.status.shipped {
-    background-color: #6fcaea;
-}
-
-
 @media (max-width: 1000px) {
     td:not(:first-of-type) {
         min-width: 12.1rem;
@@ -231,11 +214,11 @@ thead th span.icon-arrow {
 }
 
 thead th:hover span.icon-arrow{
-    border: 1.4px solid #6c00bd;
+    border: 1.4px solid #a73737;
 }
 
 thead th:hover {
-    color: #6c00bd;
+    color: #a73737;
 }
 
 thead th.active span.icon-arrow{
@@ -251,30 +234,30 @@ thead th.active,tbody td.active {
     color: #6c00bd;
 }
 
-.export__file {
+.agregar {
     position: relative;
 }
 
-.export__file .export__file-btn {
+.agregar .agregar-btn {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background: #fff6 url(images/export.png) center / 80% no-repeat;
+    background: #fff6 url(images/mas.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
 }
 
-.export__file .export__file-btn:hover { 
+.agregar .agregar-btn:hover { 
     background-color: #fff;
     transform: scale(1.15);
     cursor: pointer;
 }
 
-.export__file input {
+.agregar input {
     display: none;
 }
 
-.export__file .export__file-options {
+.agregar .agregar-options {
     position: absolute;
     right: 0;
     
@@ -292,13 +275,13 @@ thead th.active,tbody td.active {
     transition: .2s;
 }
 
-.export__file input:checked + .export__file-options {
+.agregar input:checked + .agregar-options {
     opacity: 1;
     transform: scale(1);
     z-index: 100;
 }
 
-.export__file .export__file-options label{
+.agregar .agregar-options label{
     display: block;
     width: 100%;
     padding: .6rem 0;
@@ -311,18 +294,18 @@ thead th.active,tbody td.active {
     transition: .2s ease-in-out;
 }
 
-.export__file .export__file-options label:first-of-type{
+.agregar .agregar-options label:first-of-type{
     padding: 1rem 0;
     background-color: #86e49d !important;
 }
 
-.export__file .export__file-options label:hover{
+.agregar .agregar-options label:hover{
     transform: scale(1.05);
     background-color: #fff;
     cursor: pointer;
 }
 
-.export__file .export__file-options img{
+.agregar .agregar-options img{
     width: 2rem;
     height: auto;
 }
