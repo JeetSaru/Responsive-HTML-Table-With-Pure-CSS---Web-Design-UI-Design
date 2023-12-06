@@ -16,6 +16,18 @@ Code written by:
     box-sizing: border-box;
     font-family: sans-serif;
 }
+@media print {
+ .table, .table__body {
+  overflow: visible;
+  height: auto !important;
+  width: auto !important;
+ }
+}
+
+/*@page {
+    size: landscape;
+    margin: 0; 
+}*/
 
 body {
     min-height: 100vh;
@@ -93,6 +105,7 @@ main.table {
     overflow: overlay;
 }
 
+
 .table__body::-webkit-scrollbar{
     width: 0.5rem;
     height: 0.5rem;
@@ -107,6 +120,7 @@ main.table {
 .table__body:hover::-webkit-scrollbar-thumb{ 
     visibility: visible;
 }
+
 
 table {
     width: 100%;
