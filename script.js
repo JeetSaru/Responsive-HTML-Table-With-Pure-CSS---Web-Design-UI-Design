@@ -55,14 +55,15 @@ function sortTable(column, sort_asc) {
 const pdf_btn = document.querySelector('#toPDF');
 const customers_table = document.querySelector('#customers_table');
 
+
 const toPDF = function (customers_table) {
     const html_code = `
-    <link rel="stylesheet" href="style.css">
-    <main class="table" >${customers_table.innerHTML}</main>
-    `;
+    <!DOCTYPE html>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <main class="table" id="customers_table">${customers_table.innerHTML}</main>`;
 
     const new_window = window.open();
-    new_window.document.write(html_code);
+     new_window.document.write(html_code);
 
     setTimeout(() => {
         new_window.print();
