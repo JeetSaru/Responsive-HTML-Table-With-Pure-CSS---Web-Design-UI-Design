@@ -1,3 +1,14 @@
+/**
+Responsive HTML Table With Pure CSS - Web Design/UI Design
+
+Code written by:
+👨🏻‍⚕️ @Coding Design (Jeet Saru)
+
+> You can do whatever you want with the code. However if you love my content, you can **SUBSCRIBED** my YouTube Channel.
+
+🌎link: www.youtube.com/codingdesign 
+*/
+
 const search = document.querySelector('.input-group input'),
     table_rows = document.querySelectorAll('tbody tr'),
     table_headings = document.querySelectorAll('thead th');
